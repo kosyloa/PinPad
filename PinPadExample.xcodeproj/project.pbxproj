@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		233014EB189BD32600AB4E5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233014EA189BD32600AB4E5D /* Foundation.framework */; };
+		233014ED189BD32600AB4E5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233014EC189BD32600AB4E5D /* CoreGraphics.framework */; };
+		233014EF189BD32600AB4E5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233014EE189BD32600AB4E5D /* UIKit.framework */; };
+		233014F5189BD32600AB4E5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 233014F3189BD32600AB4E5D /* InfoPlist.strings */; };
+		233014F7189BD32600AB4E5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 233014F6189BD32600AB4E5D /* main.m */; };
+		233014FB189BD32600AB4E5D /* PPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 233014FA189BD32600AB4E5D /* PPAppDelegate.m */; };
+		233014FE189BD32600AB4E5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233014FC189BD32600AB4E5D /* Main.storyboard */; };
+		23301501189BD32600AB4E5D /* PPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301500189BD32600AB4E5D /* PPViewController.m */; };
+		23301503189BD32600AB4E5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23301502189BD32600AB4E5D /* Images.xcassets */; };
+		2330150A189BD32600AB4E5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23301509189BD32600AB4E5D /* XCTest.framework */; };
+		2330150B189BD32600AB4E5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233014EA189BD32600AB4E5D /* Foundation.framework */; };
+		2330150C189BD32600AB4E5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233014EE189BD32600AB4E5D /* UIKit.framework */; };
+		23301514189BD32600AB4E5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23301512189BD32600AB4E5D /* InfoPlist.strings */; };
+		23301516189BD32600AB4E5D /* PinPadExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301515189BD32600AB4E5D /* PinPadExampleTests.m */; };
+		23301527189BD39100AB4E5D /* PPCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301521189BD39100AB4E5D /* PPCircleButton.m */; };
+		23301528189BD39100AB4E5D /* PPPinCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301523189BD39100AB4E5D /* PPPinCircleView.m */; };
+		23301529189BD39100AB4E5D /* PPPinPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301525189BD39100AB4E5D /* PPPinPadViewController.m */; };
+		2330152A189BD39100AB4E5D /* PPPinPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23301526189BD39100AB4E5D /* PPPinPadViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2330150D189BD32600AB4E5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 233014DF189BD32600AB4E5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 233014E6189BD32600AB4E5D;
+			remoteInfo = PinPadExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		233014E7189BD32600AB4E5D /* PinPadExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinPadExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		233014EA189BD32600AB4E5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		233014EC189BD32600AB4E5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		233014EE189BD32600AB4E5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		233014F2189BD32600AB4E5D /* PinPadExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PinPadExample-Info.plist"; sourceTree = "<group>"; };
+		233014F4189BD32600AB4E5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		233014F6189BD32600AB4E5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		233014F8189BD32600AB4E5D /* PinPadExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PinPadExample-Prefix.pch"; sourceTree = "<group>"; };
+		233014F9189BD32600AB4E5D /* PPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppDelegate.h; sourceTree = "<group>"; };
+		233014FA189BD32600AB4E5D /* PPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPAppDelegate.m; sourceTree = "<group>"; };
+		233014FD189BD32600AB4E5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		233014FF189BD32600AB4E5D /* PPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPViewController.h; sourceTree = "<group>"; };
+		23301500189BD32600AB4E5D /* PPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPViewController.m; sourceTree = "<group>"; };
+		23301502189BD32600AB4E5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		23301508189BD32600AB4E5D /* PinPadExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinPadExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23301509189BD32600AB4E5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		23301511189BD32600AB4E5D /* PinPadExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PinPadExampleTests-Info.plist"; sourceTree = "<group>"; };
+		23301513189BD32600AB4E5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		23301515189BD32600AB4E5D /* PinPadExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinPadExampleTests.m; sourceTree = "<group>"; };
+		23301520189BD39100AB4E5D /* PPCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCircleButton.h; sourceTree = "<group>"; };
+		23301521189BD39100AB4E5D /* PPCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCircleButton.m; sourceTree = "<group>"; };
+		23301522189BD39100AB4E5D /* PPPinCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPinCircleView.h; sourceTree = "<group>"; };
+		23301523189BD39100AB4E5D /* PPPinCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPinCircleView.m; sourceTree = "<group>"; };
+		23301524189BD39100AB4E5D /* PPPinPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPinPadViewController.h; sourceTree = "<group>"; };
+		23301525189BD39100AB4E5D /* PPPinPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPinPadViewController.m; sourceTree = "<group>"; };
+		23301526189BD39100AB4E5D /* PPPinPadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPPinPadViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		233014E4189BD32600AB4E5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233014ED189BD32600AB4E5D /* CoreGraphics.framework in Frameworks */,
+				233014EF189BD32600AB4E5D /* UIKit.framework in Frameworks */,
+				233014EB189BD32600AB4E5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301505189BD32600AB4E5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2330150A189BD32600AB4E5D /* XCTest.framework in Frameworks */,
+				2330150C189BD32600AB4E5D /* UIKit.framework in Frameworks */,
+				2330150B189BD32600AB4E5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		233014DE189BD32600AB4E5D = {
+			isa = PBXGroup;
+			children = (
+				233014F0189BD32600AB4E5D /* PinPadExample */,
+				2330150F189BD32600AB4E5D /* PinPadExampleTests */,
+				233014E9189BD32600AB4E5D /* Frameworks */,
+				233014E8189BD32600AB4E5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		233014E8189BD32600AB4E5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				233014E7189BD32600AB4E5D /* PinPadExample.app */,
+				23301508189BD32600AB4E5D /* PinPadExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		233014E9189BD32600AB4E5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				233014EA189BD32600AB4E5D /* Foundation.framework */,
+				233014EC189BD32600AB4E5D /* CoreGraphics.framework */,
+				233014EE189BD32600AB4E5D /* UIKit.framework */,
+				23301509189BD32600AB4E5D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		233014F0189BD32600AB4E5D /* PinPadExample */ = {
+			isa = PBXGroup;
+			children = (
+				2330151F189BD39100AB4E5D /* PinPad */,
+				233014F9189BD32600AB4E5D /* PPAppDelegate.h */,
+				233014FA189BD32600AB4E5D /* PPAppDelegate.m */,
+				233014FC189BD32600AB4E5D /* Main.storyboard */,
+				233014FF189BD32600AB4E5D /* PPViewController.h */,
+				23301500189BD32600AB4E5D /* PPViewController.m */,
+				23301502189BD32600AB4E5D /* Images.xcassets */,
+				233014F1189BD32600AB4E5D /* Supporting Files */,
+			);
+			path = PinPadExample;
+			sourceTree = "<group>";
+		};
+		233014F1189BD32600AB4E5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				233014F2189BD32600AB4E5D /* PinPadExample-Info.plist */,
+				233014F3189BD32600AB4E5D /* InfoPlist.strings */,
+				233014F6189BD32600AB4E5D /* main.m */,
+				233014F8189BD32600AB4E5D /* PinPadExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2330150F189BD32600AB4E5D /* PinPadExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				23301515189BD32600AB4E5D /* PinPadExampleTests.m */,
+				23301510189BD32600AB4E5D /* Supporting Files */,
+			);
+			path = PinPadExampleTests;
+			sourceTree = "<group>";
+		};
+		23301510189BD32600AB4E5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23301511189BD32600AB4E5D /* PinPadExampleTests-Info.plist */,
+				23301512189BD32600AB4E5D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2330151F189BD39100AB4E5D /* PinPad */ = {
+			isa = PBXGroup;
+			children = (
+				23301520189BD39100AB4E5D /* PPCircleButton.h */,
+				23301521189BD39100AB4E5D /* PPCircleButton.m */,
+				23301522189BD39100AB4E5D /* PPPinCircleView.h */,
+				23301523189BD39100AB4E5D /* PPPinCircleView.m */,
+				23301524189BD39100AB4E5D /* PPPinPadViewController.h */,
+				23301525189BD39100AB4E5D /* PPPinPadViewController.m */,
+				23301526189BD39100AB4E5D /* PPPinPadViewController.xib */,
+			);
+			path = PinPad;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		233014E6189BD32600AB4E5D /* PinPadExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23301519189BD32600AB4E5D /* Build configuration list for PBXNativeTarget "PinPadExample" */;
+			buildPhases = (
+				233014E3189BD32600AB4E5D /* Sources */,
+				233014E4189BD32600AB4E5D /* Frameworks */,
+				233014E5189BD32600AB4E5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinPadExample;
+			productName = PinPadExample;
+			productReference = 233014E7189BD32600AB4E5D /* PinPadExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23301507189BD32600AB4E5D /* PinPadExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2330151C189BD32600AB4E5D /* Build configuration list for PBXNativeTarget "PinPadExampleTests" */;
+			buildPhases = (
+				23301504189BD32600AB4E5D /* Sources */,
+				23301505189BD32600AB4E5D /* Frameworks */,
+				23301506189BD32600AB4E5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2330150E189BD32600AB4E5D /* PBXTargetDependency */,
+			);
+			name = PinPadExampleTests;
+			productName = PinPadExampleTests;
+			productReference = 23301508189BD32600AB4E5D /* PinPadExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		233014DF189BD32600AB4E5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Aleks Kosylo";
+				TargetAttributes = {
+					23301507189BD32600AB4E5D = {
+						TestTargetID = 233014E6189BD32600AB4E5D;
+					};
+				};
+			};
+			buildConfigurationList = 233014E2189BD32600AB4E5D /* Build configuration list for PBXProject "PinPadExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 233014DE189BD32600AB4E5D;
+			productRefGroup = 233014E8189BD32600AB4E5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				233014E6189BD32600AB4E5D /* PinPadExample */,
+				23301507189BD32600AB4E5D /* PinPadExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		233014E5189BD32600AB4E5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2330152A189BD39100AB4E5D /* PPPinPadViewController.xib in Resources */,
+				23301503189BD32600AB4E5D /* Images.xcassets in Resources */,
+				233014F5189BD32600AB4E5D /* InfoPlist.strings in Resources */,
+				233014FE189BD32600AB4E5D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301506189BD32600AB4E5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301514189BD32600AB4E5D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		233014E3189BD32600AB4E5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301529189BD39100AB4E5D /* PPPinPadViewController.m in Sources */,
+				233014FB189BD32600AB4E5D /* PPAppDelegate.m in Sources */,
+				23301501189BD32600AB4E5D /* PPViewController.m in Sources */,
+				23301528189BD39100AB4E5D /* PPPinCircleView.m in Sources */,
+				233014F7189BD32600AB4E5D /* main.m in Sources */,
+				23301527189BD39100AB4E5D /* PPCircleButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301504189BD32600AB4E5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301516189BD32600AB4E5D /* PinPadExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2330150E189BD32600AB4E5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 233014E6189BD32600AB4E5D /* PinPadExample */;
+			targetProxy = 2330150D189BD32600AB4E5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		233014F3189BD32600AB4E5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				233014F4189BD32600AB4E5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		233014FC189BD32600AB4E5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				233014FD189BD32600AB4E5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		23301512189BD32600AB4E5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23301513189BD32600AB4E5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23301517189BD32600AB4E5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		23301518189BD32600AB4E5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2330151A189BD32600AB4E5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
+				INFOPLIST_FILE = "PinPadExample/PinPadExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2330151B189BD32600AB4E5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
+				INFOPLIST_FILE = "PinPadExample/PinPadExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2330151D189BD32600AB4E5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PinPadExample.app/PinPadExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PinPadExampleTests/PinPadExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2330151E189BD32600AB4E5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PinPadExample.app/PinPadExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
+				INFOPLIST_FILE = "PinPadExampleTests/PinPadExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		233014E2189BD32600AB4E5D /* Build configuration list for PBXProject "PinPadExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23301517189BD32600AB4E5D /* Debug */,
+				23301518189BD32600AB4E5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23301519189BD32600AB4E5D /* Build configuration list for PBXNativeTarget "PinPadExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2330151A189BD32600AB4E5D /* Debug */,
+				2330151B189BD32600AB4E5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2330151C189BD32600AB4E5D /* Build configuration list for PBXNativeTarget "PinPadExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2330151D189BD32600AB4E5D /* Debug */,
+				2330151E189BD32600AB4E5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 233014DF189BD32600AB4E5D /* Project object */;
+}
