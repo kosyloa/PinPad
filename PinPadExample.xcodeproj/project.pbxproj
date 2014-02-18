@@ -412,6 +412,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
 				INFOPLIST_FILE = "PinPadExample/PinPadExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -425,6 +426,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
 				INFOPLIST_FILE = "PinPadExample/PinPadExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,6 +493,7 @@
 				2330151B189BD32600AB4E5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2330151C189BD32600AB4E5D /* Build configuration list for PBXNativeTarget "PinPadExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +502,7 @@
 				2330151E189BD32600AB4E5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

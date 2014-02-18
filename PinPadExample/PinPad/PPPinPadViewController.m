@@ -9,6 +9,9 @@
 #import "PPPinPadViewController.h"
 #import "PPPinCircleView.h"
 
+#define PP_SYSTEM_VERSION_GREATER_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+
+
 @interface PPPinPadViewController () {
     NSInteger _shakes;
     NSInteger _direction;
@@ -41,15 +44,32 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void) setCancelButtonHidden:(BOOL)cancelButtonHidden{
+    _cancelButtonHidden = cancelButtonHidden;
+    cancelButton.hidden = cancelButtonHidden;
+}
+
+
 - (void)dismissPinPad {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadWillHide)]) {
+        [self.delegate pinPadWillHide];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadDidHide)]) {
+            [self.delegate pinPadDidHide];
+        }
+    }];
 }
 
 
 #pragma mark Status Bar
 - (void)changeStatusBarHidden:(BOOL)hidden {
     _errorView.hidden = hidden;
-    [self setNeedsStatusBarAppearanceUpdate];
+    if (PP_SYSTEM_VERSION_GREATER_THAN(@"6.9")) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
 }
 
 -(BOOL)prefersStatusBarHidden
