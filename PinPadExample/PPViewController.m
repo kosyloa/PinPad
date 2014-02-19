@@ -28,16 +28,21 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     PPPinPadViewController * pinViewController = [[PPPinPadViewController alloc] init];
+    pinViewController.delegate = self;
+    pinViewController.pinTitle = @"Enter Passcode";
+    pinViewController.errorTitle = @"Passcode is not correct";
+    pinViewController.cancelButtonHidden = NO; //default is False
+    pinViewController.backgroundImage = [UIImage imageNamed:@"pinViewImage"]; //if you need remove the background set a empty UIImage ([UIImage new]) or set a background color
+//    pinViewController.backgroundColor = [UIColor blueColor]; //default is a darkGrayColor
     
     [self presentViewController:pinViewController animated:YES completion:NULL];
-    pinViewController.delegate = self;
 }
 
 - (BOOL)checkPin:(NSString *)pin {
-    return [pin isEqualToString:@"123456"];
+    return [pin isEqualToString:@"1234"];
 }
 
 - (NSInteger)pinLenght {
-    return 6;
+    return 4;
 }
 @end

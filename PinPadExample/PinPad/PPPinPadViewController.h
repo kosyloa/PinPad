@@ -11,9 +11,10 @@
 @protocol PinPadPasswordProtocol <NSObject>
 
 @required
-- (NSInteger)pinLenght;
 - (BOOL)checkPin:(NSString *)pin;
 @optional
+- (NSInteger)pinLenght;
+- (void)pinPadSuccessPin;
 - (void)pinPadWillHide;
 - (void)pinPadDidHide;
 @end
@@ -36,6 +37,8 @@
 @property (nonatomic, strong) NSString *errorTitle;
 @property (nonatomic, strong) NSString *pinTitle;
 @property (nonatomic, assign) BOOL cancelButtonHidden;
+@property (nonatomic, strong) UIImage *backgroundImage;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 
 @end

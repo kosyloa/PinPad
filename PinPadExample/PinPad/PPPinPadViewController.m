@@ -26,7 +26,7 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -35,7 +35,21 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 {
     [super viewDidLoad];
     [self addCircles];
-	// Do any additional setup after loading the view.
+	
+    pinLabel.text = self.pinTitle ? :@"Enter PIN";
+    pinErrorLabel.text = self.errorTitle ? : @"PIN number is not correct";
+    cancelButton.hidden = self.cancelButtonHidden;
+    if (self.backgroundImage) {
+        backgroundImageView.hidden = NO;
+        backgroundImageView.image = self.backgroundImage;
+    }
+    
+    if (self.backgroundColor && !self.backgroundImage) {
+        backgroundImageView.hidden = YES;
+        self.view.backgroundColor = self.backgroundColor;
+    }
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +62,28 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 - (void) setCancelButtonHidden:(BOOL)cancelButtonHidden{
     _cancelButtonHidden = cancelButtonHidden;
     cancelButton.hidden = cancelButtonHidden;
+}
+
+- (void) setErrorTitle:(NSString *)errorTitle{
+    _errorTitle = errorTitle;
+    pinErrorLabel.text = errorTitle;
+}
+
+- (void) setPinTitle:(NSString *)pinTitle{
+    _pinTitle = pinTitle;
+    pinLabel.text = pinTitle;
+}
+
+- (void) setBackgroundImage:(UIImage *)backgroundImage{
+    _backgroundImage = backgroundImage;
+    backgroundImageView.image = backgroundImage;
+    backgroundImageView.hidden = NO;
+}
+
+- (void) setBackgroundColor:(UIColor *)backgroundColor{
+    _backgroundColor = backgroundColor;
+    self.view.backgroundColor = backgroundColor;
+    backgroundImageView.hidden = YES;
 }
 
 
@@ -108,6 +144,9 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     
     if ([self checkPin:_inputPin]) {
         NSLog(@"Correct pin");
+        if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadSuccessPin)]) {
+            [self.delegate pinPadSuccessPin];
+        }
         [self dismissPinPad];
     }
     else if ([self pinLenght] == _inputPin.length) {
@@ -129,10 +168,10 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 }
 
 - (BOOL)checkPin:(NSString *)pinString {
-    if([self.delegate respondsToSelector:@selector(checkPin:)]) {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(checkPin:)]) {
         return [self.delegate checkPin:pinString];
     }
-    return YES;
+    return NO;
 }
 
 - (NSInteger)pinLenght {
