@@ -3,7 +3,7 @@ PinPad
 
 View like iOS7 Lock screen
 
-Dinamic count of input numbers and custom configuration, works on iOS6 and above 
+Dinamic count of input numbers and custom configuration, works on iOS 5 and above 
 
 How to use
 ======
