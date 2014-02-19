@@ -26,7 +26,7 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
     }
     return self;
 }
@@ -48,7 +48,7 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
         backgroundImageView.hidden = YES;
         self.view.backgroundColor = self.backgroundColor;
     }
-
+    
     
 }
 
@@ -142,8 +142,9 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     [_inputPin appendString:[((UIButton*)sender) titleForState:UIControlStateNormal]];
     [self fillingCircle:_inputPin.length - 1];
     
-    if ([self checkPin:_inputPin]) {
+    if ([self pinLenght] == _inputPin.length && [self checkPin:_inputPin]) {
         NSLog(@"Correct pin");
+        [self resetClick:nil];
         if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadSuccessPin)]) {
             [self.delegate pinPadSuccessPin];
         }
