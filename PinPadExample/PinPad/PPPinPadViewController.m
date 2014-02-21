@@ -143,12 +143,17 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     [self fillingCircle:_inputPin.length - 1];
     
     if ([self pinLenght] == _inputPin.length && [self checkPin:_inputPin]) {
-        NSLog(@"Correct pin");
-        [self resetClick:nil];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadSuccessPin)]) {
-            [self.delegate pinPadSuccessPin];
-        }
-        [self dismissPinPad];
+        double delayInSeconds = 0.3;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            NSLog(@"Correct pin");
+            [self resetClick:nil];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadSuccessPin)]) {
+                [self.delegate pinPadSuccessPin];
+            }
+            [self dismissPinPad];
+        });
+
     }
     else if ([self pinLenght] == _inputPin.length) {
         _direction = 1;
