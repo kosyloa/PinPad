@@ -9,6 +9,9 @@
 #import "PPPinPadViewController.h"
 #import "PPPinCircleView.h"
 
+#define PP_SYSTEM_VERSION_GREATER_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+
+
 @interface PPPinPadViewController () {
     NSInteger _shakes;
     NSInteger _direction;
@@ -23,7 +26,7 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -32,7 +35,21 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 {
     [super viewDidLoad];
     [self addCircles];
-	// Do any additional setup after loading the view.
+	
+    pinLabel.text = self.pinTitle ? :@"Enter PIN";
+    pinErrorLabel.text = self.errorTitle ? : @"PIN number is not correct";
+    cancelButton.hidden = self.cancelButtonHidden;
+    if (self.backgroundImage) {
+        backgroundImageView.hidden = NO;
+        backgroundImageView.image = self.backgroundImage;
+    }
+    
+    if (self.backgroundColor && !self.backgroundImage) {
+        backgroundImageView.hidden = YES;
+        self.view.backgroundColor = self.backgroundColor;
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,15 +58,54 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void) setCancelButtonHidden:(BOOL)cancelButtonHidden{
+    _cancelButtonHidden = cancelButtonHidden;
+    cancelButton.hidden = cancelButtonHidden;
+}
+
+- (void) setErrorTitle:(NSString *)errorTitle{
+    _errorTitle = errorTitle;
+    pinErrorLabel.text = errorTitle;
+}
+
+- (void) setPinTitle:(NSString *)pinTitle{
+    _pinTitle = pinTitle;
+    pinLabel.text = pinTitle;
+}
+
+- (void) setBackgroundImage:(UIImage *)backgroundImage{
+    _backgroundImage = backgroundImage;
+    backgroundImageView.image = backgroundImage;
+    backgroundImageView.hidden = NO;
+}
+
+- (void) setBackgroundColor:(UIColor *)backgroundColor{
+    _backgroundColor = backgroundColor;
+    self.view.backgroundColor = backgroundColor;
+    backgroundImageView.hidden = YES;
+}
+
+
 - (void)dismissPinPad {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadWillHide)]) {
+        [self.delegate pinPadWillHide];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadDidHide)]) {
+            [self.delegate pinPadDidHide];
+        }
+    }];
 }
 
 
 #pragma mark Status Bar
 - (void)changeStatusBarHidden:(BOOL)hidden {
     _errorView.hidden = hidden;
-    [self setNeedsStatusBarAppearanceUpdate];
+    if (PP_SYSTEM_VERSION_GREATER_THAN(@"6.9")) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -86,9 +142,18 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     [_inputPin appendString:[((UIButton*)sender) titleForState:UIControlStateNormal]];
     [self fillingCircle:_inputPin.length - 1];
     
-    if ([self checkPin:_inputPin]) {
-        NSLog(@"Correct pin");
-        [self dismissPinPad];
+    if ([self pinLenght] == _inputPin.length && [self checkPin:_inputPin]) {
+        double delayInSeconds = 0.3;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            NSLog(@"Correct pin");
+            [self resetClick:nil];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(pinPadSuccessPin)]) {
+                [self.delegate pinPadSuccessPin];
+            }
+            [self dismissPinPad];
+        });
+
     }
     else if ([self pinLenght] == _inputPin.length) {
         _direction = 1;
@@ -109,10 +174,10 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 }
 
 - (BOOL)checkPin:(NSString *)pinString {
-    if([self.delegate respondsToSelector:@selector(checkPin:)]) {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(checkPin:)]) {
         return [self.delegate checkPin:pinString];
     }
-    return YES;
+    return NO;
 }
 
 - (NSInteger)pinLenght {

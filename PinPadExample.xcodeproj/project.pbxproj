@@ -25,6 +25,7 @@
 		23301528189BD39100AB4E5D /* PPPinCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301523189BD39100AB4E5D /* PPPinCircleView.m */; };
 		23301529189BD39100AB4E5D /* PPPinPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23301525189BD39100AB4E5D /* PPPinPadViewController.m */; };
 		2330152A189BD39100AB4E5D /* PPPinPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23301526189BD39100AB4E5D /* PPPinPadViewController.xib */; };
+		DE65627718B4FA180015F0A7 /* pinViewImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DE65627618B4FA180015F0A7 /* pinViewImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		23301524189BD39100AB4E5D /* PPPinPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPinPadViewController.h; sourceTree = "<group>"; };
 		23301525189BD39100AB4E5D /* PPPinPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPinPadViewController.m; sourceTree = "<group>"; };
 		23301526189BD39100AB4E5D /* PPPinPadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPPinPadViewController.xib; sourceTree = "<group>"; };
+		DE65627618B4FA180015F0A7 /* pinViewImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinViewImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		2330151F189BD39100AB4E5D /* PinPad */ = {
 			isa = PBXGroup;
 			children = (
+				DE65627618B4FA180015F0A7 /* pinViewImage.png */,
 				23301520189BD39100AB4E5D /* PPCircleButton.h */,
 				23301521189BD39100AB4E5D /* PPCircleButton.m */,
 				23301522189BD39100AB4E5D /* PPPinCircleView.h */,
@@ -258,6 +261,7 @@
 				2330152A189BD39100AB4E5D /* PPPinPadViewController.xib in Resources */,
 				23301503189BD32600AB4E5D /* Images.xcassets in Resources */,
 				233014F5189BD32600AB4E5D /* InfoPlist.strings in Resources */,
+				DE65627718B4FA180015F0A7 /* pinViewImage.png in Resources */,
 				233014FE189BD32600AB4E5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +416,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
 				INFOPLIST_FILE = "PinPadExample/PinPadExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -425,7 +431,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PinPadExample/PinPadExample-Prefix.pch";
 				INFOPLIST_FILE = "PinPadExample/PinPadExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -491,6 +499,7 @@
 				2330151B189BD32600AB4E5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2330151C189BD32600AB4E5D /* Build configuration list for PBXNativeTarget "PinPadExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +508,7 @@
 				2330151E189BD32600AB4E5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
