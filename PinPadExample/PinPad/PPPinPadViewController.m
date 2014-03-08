@@ -8,12 +8,17 @@
 
 #import "PPPinPadViewController.h"
 #import "PPPinCircleView.h"
-
+typedef NS_ENUM(NSInteger, settingNewPinState) {
+    settingMewPinStateFisrt   = 0,
+    settingMewPinStateConfirm = 1
+};
 @interface PPPinPadViewController () {
     NSInteger _shakes;
     NSInteger _direction;
 }
-
+@property (nonatomic)                   settingNewPinState  newPinState;
+@property (nonatomic,strong)            NSString            *fisrtPassCode;
+@property (weak, nonatomic) IBOutlet    UILabel             *laInstructionsLabel;
 @end
 
 static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
@@ -60,7 +65,12 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
-
+-(void)setIsSettingPinCode:(BOOL)isSettingPinCode{
+    _isSettingPinCode = isSettingPinCode;
+    if (isSettingPinCode) {
+        self.newPinState = settingMewPinStateFisrt;
+    }
+}
 #pragma mark Actions
 
 - (IBAction)cancelClick:(id)sender {
@@ -69,33 +79,62 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
 
 - (IBAction)resetClick:(id)sender {
     [self addCircles];
+    self.newPinState    = settingMewPinStateFisrt;
+    self.laInstructionsLabel.text = NSLocalizedString(@"Enter PassCode", @"");
     _inputPin = [NSMutableString string];
 }
 
 
 - (IBAction)numberButtonClick:(id)sender {
-    
     if(!_inputPin) {
         _inputPin = [NSMutableString new];
     }
-    
     if(!_errorView.hidden) {
         [self changeStatusBarHidden:YES];
     }
-    
     [_inputPin appendString:[((UIButton*)sender) titleForState:UIControlStateNormal]];
     [self fillingCircle:_inputPin.length - 1];
     
-    if ([self checkPin:_inputPin]) {
-        NSLog(@"Correct pin");
-        [self dismissPinPad];
-    }
-    else if ([self pinLenght] == _inputPin.length) {
-        _direction = 1;
-        _shakes = 0;
-        [self shakeCircles:_pinCirclesView];
-        [self changeStatusBarHidden:NO];
-        NSLog(@"Not correct pin");
+    if (self.isSettingPinCode){
+        if ([self pinLenght] == _inputPin.length){
+            if (self.newPinState == settingMewPinStateFisrt) {
+                self.fisrtPassCode  = _inputPin;
+                // reset and prepare for confirmation stage
+                [self resetClick:Nil];
+                self.newPinState    = settingMewPinStateConfirm;
+                // update instruction label
+                self.laInstructionsLabel.text = NSLocalizedString(@"Confirm PassCode", @"");
+            }else{
+                // we are at confirmation stage check this pin with original one
+                if ([self.fisrtPassCode isEqualToString:_inputPin]) {
+                    // every thing is ok
+                    if ([self.delegate respondsToSelector:@selector(userPassCode:)]) {
+                        [self.delegate userPassCode:self.fisrtPassCode];
+                    }
+                    [self dismissPinPad];
+                }else{
+                    // reset to first stage
+                    self.laInstructionsLabel.text = NSLocalizedString(@"Enter PassCode", @"");
+                    _direction = 1;
+                    _shakes = 0;
+                    [self shakeCircles:_pinCirclesView];
+                    [self changeStatusBarHidden:NO];
+                    [self resetClick:Nil];
+                }
+            }
+        }
+    }else{
+        if ([self checkPin:_inputPin]) {
+            NSLog(@"Correct pin");
+            [self dismissPinPad];
+        }
+        else if ([self pinLenght] == _inputPin.length) {
+            _direction = 1;
+            _shakes = 0;
+            [self shakeCircles:_pinCirclesView];
+            [self changeStatusBarHidden:NO];
+            NSLog(@"Not correct pin");
+        }
     }
 }
 

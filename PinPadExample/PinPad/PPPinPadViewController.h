@@ -12,7 +12,9 @@
 
 @required
 - (NSInteger)pinLenght;
+@optional
 - (BOOL)checkPin:(NSString *)pin;
+- (void)userPassCode:(NSString *)newPassCode;
 @end
 
 
@@ -24,6 +26,6 @@
 }
 
 @property (nonatomic,assign) id<PinPadPasswordProtocol> delegate;
-
+@property (nonatomic) BOOL isSettingPinCode;
 
 @end
