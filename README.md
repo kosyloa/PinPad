@@ -43,4 +43,4 @@ Credits
 - Image author [MsLarkina](https://twitter.com/MsLarkina)
 - First version [kosyloa](https://github.com/kosyloa)
 - Custom configutation [busta117](http://www.santiagobustamante.info)
-- user can set his pass [ihomam]s
+- user can set his pass [ihomam](https://github.com/ihomam)
