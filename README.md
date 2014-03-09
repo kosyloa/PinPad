@@ -17,16 +17,18 @@ How to use
 - this protocol have a simple methods to control the pin pad
 
 		- (BOOL)checkPin:(NSString *)pin; 	//required, validation with your configured code
-		- (NSInteger)pinLenght; 			//optional, works like a data source of pin lenght
+		- (NSInteger)pinLenght; 			//required, works like a data source of pin lenght
 		- (void)pinPadSuccessPin;			//optional, when the user set a correct pin
 		- (void)pinPadWillHide;				//optional, before the pin pad hide
 		- (void)pinPadDidHide;				//optional, after pin pad hide
+		- (void)userPassCode:(NSString *)newPassCode; //optional, set new user passcode
+
 
 - in your code setup the controller as shown below:
 
 		PPPinPadViewController * pinViewController = [[PPPinPadViewController alloc] init];
 		pinViewController.delegate = self;
-		pinViewController.pinTitle = @"Enter Passcode";	
+		pinViewController.pinTitle = @"Enter Passcode";	    pinViewController.isSettingPinCode = YES; // YES-input new passcode and confirmation 
 		pinViewController.errorTitle = @"Passcode is not correct";
 		pinViewController.cancelButtonHidden = NO; //default is False
 		pinViewController.backgroundImage = [UIImage imageNamed:@"pinViewImage"]; //if you need remove the background set a empty UIImage ([UIImage new]) or set a background color
@@ -41,3 +43,4 @@ Credits
 - Image author [MsLarkina](https://twitter.com/MsLarkina)
 - First version [kosyloa](https://github.com/kosyloa)
 - Custom configutation [busta117](http://www.santiagobustamante.info)
+- user can set his pass [ihomam]s
