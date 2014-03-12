@@ -20,6 +20,10 @@
 }
 
 
+-(void) willMoveToSuperview:(UIView *)newSuperview{
+    self.layer.borderColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 
@@ -28,18 +32,22 @@
     // Drawing code
     [super drawRect:rect];
     [self.layer setCornerRadius:CGRectGetHeight(rect)/2.0];
-    self.layer.borderColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
-    self.layer.borderWidth = 2.0f;
+    self.layer.borderWidth = 1.7f;
+    self.layer.masksToBounds = YES;
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
     
     if(highlighted) {
-        self.layer.borderColor = [self titleColorForState:UIControlStateHighlighted].CGColor;
+        self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+        self.layer.borderColor = [UIColor clearColor].CGColor;
     }
     else {
+        self.backgroundColor = [UIColor clearColor];
         self.layer.borderColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
     }
     
 }
+
+
 @end

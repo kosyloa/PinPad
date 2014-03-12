@@ -11,6 +11,8 @@
 
 
 #define PP_SYSTEM_VERSION_GREATER_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define PP_IS_IPHONE ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+#define PP_IS_IPHONE_5 (PP_IS_IPHONE && ([[UIScreen mainScreen] bounds].size.height > 480.0))
 
 
 typedef NS_ENUM(NSInteger, settingNewPinState) {
@@ -54,6 +56,18 @@ static  CGFloat kVTPinPadViewControllerCircleRadius = 6.0f;
     if (self.backgroundColor && !self.backgroundImage) {
         backgroundImageView.hidden = YES;
         self.view.backgroundColor = self.backgroundColor;
+    }
+    
+    if (!PP_SYSTEM_VERSION_GREATER_THAN(@"6.9")) {
+        CGRect frame = _pinContainer.frame;
+        frame.origin.y += 20;
+        _pinContainer.frame = frame;
+    }
+    
+    if (!PP_IS_IPHONE_5) {
+        CGRect frame = _numPadContainer.frame;
+        frame.size.height -= 50;
+        _numPadContainer.frame = frame;
     }
     
     
