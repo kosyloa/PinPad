@@ -44,3 +44,8 @@ Credits
 - First version [kosyloa](https://github.com/kosyloa)
 - Custom configutation [busta117](http://www.santiagobustamante.info)
 - user can set his pass [ihomam](https://github.com/ihomam)
+
+
+License
+======
+**PinPad** is provided under the MIT license.
