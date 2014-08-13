@@ -3,28 +3,28 @@ PinPad
 
 View like iOS7 Lock screen
 
-Dinamic count of input numbers and custom configuration, works on iOS 5 and above 
+Dynamic count of input numbers and custom configuration. Works on iOS 5+.
 
 How to use
 ======
 
-- add the folder **PinPad** in your project folder
+- Add the folder **PinPad** in your project folder
 
-- add <code>#import "PPPinPadViewController.h"</code> in your viewController(in the .h file)
+- Add <code>#import "PPPinPadViewController.h"</code> in your viewController(in the .h file)
 
-- implement the protocol <code>PinPadPasswordProtocol</code> in your class
+- Implement the protocol <code>PinPadPasswordProtocol</code> in your class
 
-- this protocol have a simple methods to control the pin pad
+- This protocol has simple methods to control the pin pad
 
 		- (BOOL)checkPin:(NSString *)pin; 	//required, validation with your configured code
-		- (NSInteger)pinLenght; 			//required, works like a data source of pin lenght
+		- (NSInteger)pinLength; 			//required, works like a data source of pin length
 		- (void)pinPadSuccessPin;			//optional, when the user set a correct pin
 		- (void)pinPadWillHide;				//optional, before the pin pad hide
 		- (void)pinPadDidHide;				//optional, after pin pad hide
 		- (void)userPassCode:(NSString *)newPassCode; //optional, set new user passcode
 
 
-- in your code setup the controller as shown below:
+- In your code, setup the controller as shown below:
 
 		PPPinPadViewController * pinViewController = [[PPPinPadViewController alloc] init];
 		pinViewController.delegate = self;
@@ -43,7 +43,7 @@ Credits
 - Image author [MsLarkina](https://twitter.com/MsLarkina)
 - First version [kosyloa](https://github.com/kosyloa)
 - Custom configutation [busta117](http://www.santiagobustamante.info)
-- user can set his pass [ihomam](https://github.com/ihomam)
+- User can set his or her passcode [ihomam](https://github.com/ihomam)
 
 
 License
