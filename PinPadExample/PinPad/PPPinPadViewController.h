@@ -29,6 +29,8 @@
     __weak IBOutlet UIImageView *backgroundImageView;
     __weak IBOutlet UIButton *resetButton;
     __weak IBOutlet UIButton *cancelButton;
+    __weak IBOutlet UIView *_pinContainer;
+    __weak IBOutlet UIView *_numPadContainer;
     NSMutableString *_inputPin;
     NSMutableArray *_circleViewList;
 }
